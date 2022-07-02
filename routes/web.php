@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/orders', function(){
+    $users = \App\Models\User::all();
+    foreach($users as $user) {
+         echo 'users name: '.$user['name'].'<br>';
+         echo '<b>user\'s products: </b><br>';
+         foreach ($user->products as $product) {
+            echo $product['name'].','.'<br>';
+        }
+         echo '<br>';
+         echo '----------------------------------'.'<br>';
+    }
+
+});

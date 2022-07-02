@@ -25,7 +25,7 @@ class ProductResource extends JsonResource
             'material'=> $this->material,
             'gender'=> $this->gender,
             'kid'=> $this->kid,
-            'created_at' => $this->created_at, 
+            // 'created_at' => $this->created_at, 
         ];
     }
 }

@@ -16,17 +16,6 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i<11; $i++){
-        DB::table('products')->insert([
-            'name' => 'Product '.$i,
-            'description' => 'Описание продукта, все хорошо',
-            'price' => rand(100,5000),
-            'growth' => rand(50,100),
-            'color' => 'white',
-            'material' => 'cotton',
-            'gender' => 'unisex',
-            'kid'=> rand(0,1),
-        ]);
-    }
+        
     }
 }

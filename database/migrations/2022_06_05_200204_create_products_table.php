@@ -19,11 +19,13 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('photo')->nullable();
             $table->integer('price');
+            $table->integer('priceKid');
             $table->integer('growth');
             $table->char('color', 40);
             $table->char('material',50)->nullable();
             $table->char('gender', 40)->nullable();
             $table->boolean('kid')->default(0);
+
             $table->timestamps();
         });
     }
