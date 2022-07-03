@@ -23,7 +23,33 @@ class ProductController extends Controller
      
     public function store(ProductStoreRequest $request)
     {
-        $created_product = Product::create($request->validated());
+        $attrs = $request->validated([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            // 'photo',
+            'price' => 'required',
+            'price_kid' => 'required',
+            'growth' => 'required',
+            'color' => 'required|string',
+            'material' => 'required|string',
+            'gender' => 'required|string',
+            'kid' => 'required'
+            
+        ]);
+        $photo = $this->prouctsImage($request->photo);
+
+        $created_product = Product::create([
+            'name' => $attrs['name'],
+            'description' => $attrs['description'],
+            'photo' => $photo,
+            'price' => $attrs['price'],
+            'price_kid' => $attrs['price_kid'],
+            'growth' => $attrs['growth'],
+            'color' => $attrs['color'],
+            'material' => $attrs['material'],
+            'gender' => $attrs['gender'],
+            'kid' => $attrs['kid'],
+        ]);
         return new ProductResource($created_product);
     }
 

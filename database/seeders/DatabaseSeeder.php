@@ -23,14 +23,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-     /*    for($i=0; $i<=15; $i++){
+        /* for($i=0; $i<=15; $i++){
         Product::factory()->create(
             [
             'name' => 'Test Product '.$i,
             'description' => 'Описание продукта № '.$i,
-            'price' => rand(100,5000),
             'photo' => 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png',
-            'priceKid' => rand(100,5000),
+            'price' => rand(100,5000),
+            'price_kid' => rand(100,5000),
             'growth' => rand(50,100),
             'color' => 'white',
             'material' => 'cotton',
@@ -39,7 +39,8 @@ class DatabaseSeeder extends Seeder
             ]
         );
         } */
-        Order::factory(5)->create();
+        Product::factory(10)->create();
+        // Order::factory(5)->create();
 
 
     }

@@ -15,9 +15,24 @@ class ProductFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition()
-    {
+    {   
+        $colorList = ['black', 'blue', 'white', 'red', 'yellow', 'green', 'purple', 'cyan'];
+        $sexList = ['man','woman', 'unisex'];
+        $materialList = ['wool', 'silk', 'clap', 'lenok', 'viscose', 'acetate', 'polyester', 'acrylic'];
+
         return [
-            //
+        
+                'name' => 'Product '.$this->faker->word(),
+                'description' => 'Description product '.$this->faker->word(),
+                'photo' => 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png',
+                'price' => $this->faker->numberBetween(100,5000),
+                'price_kid' => $this->faker->numberBetween(100,5000),
+                'growth' => $this->faker->numberBetween(50,100),
+                'color' => $colorList[rand(0,count($colorList)-1)],
+                'material' => $materialList[rand(0,count($materialList)-1)],
+                'gender' => $sexList[rand(0,count($sexList)-1)],
+                'kid'=> rand(0,1),
+                
         ];
     }
 }
