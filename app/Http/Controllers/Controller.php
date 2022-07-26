@@ -15,12 +15,12 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
-    public function prouctsImage($photo, $path = 'public'){
+    public function prouctsImage($photo, $path = 'product'){
         if(!$photo){
             return null;
         }
 
-        $filename = time().'.png';
+        $filename = time().'.jpg';
 
         Storage::disk($path)->put($filename, base64_decode($photo));
 

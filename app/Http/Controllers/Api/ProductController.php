@@ -23,7 +23,9 @@ class ProductController extends Controller
      
     public function store(ProductStoreRequest $request)
     {
-        $attrs = $request->validated([
+
+
+        $attrs = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
             // 'photo',
@@ -36,7 +38,15 @@ class ProductController extends Controller
             'kid' => 'required'
             
         ]);
-        $photo = $this->prouctsImage($request->photo);
+        $filename = date('H.i_d.m.y').'.jpg';
+        $path = $request->file('photo')->move(public_path("storage/image/"), $filename);
+        $photo = url('storage/image/'.$filename);
+        // $photo = $this->prouctsImage($request->photo);
+       /*  if($request->photo != ''){
+            $photo = time().'.jpg';
+            file_put_contents('/'.$photo, base64_decode($request->photo));
+
+        } */
 
         $created_product = Product::create([
             'name' => $attrs['name'],
