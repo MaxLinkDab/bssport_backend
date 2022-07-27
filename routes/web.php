@@ -29,3 +29,15 @@ Route::get('/orders', function(){
     }
 
 });
+Route::get('/size', function(){
+    $sizeUnparse = '100-150';
+    $size=[];
+    $sizeList = list($minSize, $maxSize) = explode('-', $sizeUnparse);
+    echo($maxSize);
+    for ($i = $minSize; $i <= $maxSize; $i += 5) {
+         echo($i);
+         echo('<br>');
+        //  break;
+        //  if($i<=150) return 0;
+    }
+});

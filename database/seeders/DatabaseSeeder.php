@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\SizeAndPrice;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -39,7 +40,8 @@ class DatabaseSeeder extends Seeder
             ]
         );
         } */
-        Product::factory(10)->create();
+        // Product::factory(10)->create();
+        // SizeAndPrice::factory(10)->create();
         // Order::factory(5)->create();
 
 
