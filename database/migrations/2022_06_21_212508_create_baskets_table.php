@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('baskets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('product_id');
+            $table->char('vendor_code',100);
+            $table->integer('size');
+            $table->integer('sum');
+            $table->integer('amount')->default(1);//количество продукта
+            $table->string('color');
             $table->timestamps();
         });
     }

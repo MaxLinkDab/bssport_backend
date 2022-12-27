@@ -15,16 +15,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->char('vendor_code',100)->unique();
             $table->char('name',100);
             $table->string('description')->nullable();
-            $table->string('photo')->nullable();
-            $table->integer('price');
-            $table->integer('priceKid');
-            $table->integer('growth');
-            $table->char('color', 40);
+            $table->foreignId('photo')->nullable();
+            $table->foreignId('price_and_size');
+            $table->integer('sale')->default(0);
+            $table->foreignId('color');
             $table->char('material',50)->nullable();
             $table->char('gender', 40)->nullable();
-            $table->boolean('kid')->default(0);
 
             $table->timestamps();
         });

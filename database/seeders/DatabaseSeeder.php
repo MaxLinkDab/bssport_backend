@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Basket;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\SizeAndPrice;
@@ -40,9 +41,9 @@ class DatabaseSeeder extends Seeder
             ]
         );
         } */
-        // Product::factory(10)->create();
-        // SizeAndPrice::factory(10)->create();
-        // Order::factory(5)->create();
+       /*  Product::factory(10)->create();
+        SizeAndPrice::factory(10)->create(); */
+        // Basket::factory(5)->create();
 
 
     }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Basket;
+use App\Models\Order;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
@@ -20,6 +22,9 @@ class UserResource extends JsonResource
             'surname'=>$this->surname,
             'email'=>$this->email,
             'number_phone'=>$this->number_phone,
+            'address' =>$this->address,
+            'basket' => Basket::where('user_id', $this->id)->get(),
+            'order' => Order::where('user_id', $this->id)->get(),
 
         ];
     }

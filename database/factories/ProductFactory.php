@@ -24,10 +24,9 @@ class ProductFactory extends Factory
         
                 'name' => 'Product '.$this->faker->word(),
                 'description' => 'Description product '.$this->faker->word(),
+                'vendor_code' => $this->faker->word(),
                 'photo' => 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png',
-                'price' => $this->faker->numberBetween(100,5000),
-                'price_kid' => $this->faker->numberBetween(100,5000),
-                'growth' => $this->faker->numberBetween(50,100),
+                'price_and_size' => $this->faker->numberBetween(1,10),
                 'color' => $colorList[rand(0,count($colorList)-1)],
                 'material' => $materialList[rand(0,count($materialList)-1)],
                 'gender' => $sexList[rand(0,count($sexList)-1)],

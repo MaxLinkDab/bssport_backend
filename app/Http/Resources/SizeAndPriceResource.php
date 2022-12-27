@@ -15,7 +15,7 @@ class SizeAndPriceResource extends JsonResource
     public function toArray($request)
     {
         return[
-            'product_id'=>$this->product_id,
+        // 'product_id'=>$this->product_id,
             'size'=>$this->size,
             'price'=>$this->price,
 

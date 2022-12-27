@@ -13,4 +13,11 @@ class Product extends Model
         return $this->hasMany(SizeAndPrice::class);
     }
 
+    public function media(){
+        return $this->hasMany(Media::class);
+    }
+
+    public function color(){
+        return $this->hasMany(Color::class);
+    }
 }
